@@ -1,0 +1,1 @@
+select regions.name, sum(infos.capacity) as total_capacity from `bigquery-public-data.san_francisco_bikeshare.bikeshare_station_info` infos inner join `bigquery-public-data.san_francisco_bikeshare.bikeshare_regions` regions on infos.region_id = regions.region_id group by regions.name having total_capacity < 5000
